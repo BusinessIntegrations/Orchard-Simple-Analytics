@@ -5,7 +5,9 @@
     <ol>
         <li>
             @Html.LabelFor(m => m.AnalyticsScript, T("Analytics script"))
-            @Html.TextAreaFor(m => m.AnalyticsScript, new { @class = "text large" })
+            @Html.TextAreaFor(m => m.AnalyticsScript, new {
+                @class = "text large"
+            })
             @Html.ValidationMessageFor(m => m.AnalyticsScript)
             <span class="hint">@T("This script will be injected into the head of the site, wrapped into a script tag (so don't include the script tag). E.g. you can copy your async Google Analytics tracking code here.")</span>
         </li>
