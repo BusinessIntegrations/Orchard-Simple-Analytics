@@ -1,14 +1,16 @@
+The **BI/public** branch in this fork of this code is managed by [Business Integrations Ltd](https://github.com/BusinessIntegrations).
+
+A changelog is appended at the end of this file. Further information on our coding standards and approach are detailed [here](https://businessintegrations.github.io/).
+
+***
+ 
 # Orchard Simple Analytics Readme
-
-
 
 ## Project Description
 
 Orchard module for simply configuring an analytics (e.g. Google Analytics) script for an Orchard site.
 
-
 ## Documentation
-
 
 Just add the analytics script under the site Settings. This script (wrapped into a script tag) will be injected into the head of your site. You can also configure whether to inject the script on the admin site or not.
 
@@ -25,3 +27,11 @@ Bug reports, feature requests and comments are warmly welcome, **please do so vi
 Feel free to send pull requests too, no matter which source repository you choose for this purpose.
 
 This project is developed by [Lombiq Technologies Ltd](http://lombiq.com/). Commercial-grade support is available through Lombiq.
+
+***
+
+## Business Integrations Changelog
+
+1. Module rework 2018-04-04  
+   * Code tidy
+   * Update readme.md
