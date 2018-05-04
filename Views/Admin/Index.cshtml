@@ -1,0 +1,25 @@
+﻿@model Lombiq.SimpleAnalytics.ViewModels.AnalyticsSettingsViewModel
+<h2>@T("Lombiq Simple Analytics Settings")</h2>
+@using (Html.BeginFormAntiForgeryPost()) {
+    @Html.ValidationSummary()
+    <fieldset>
+        <legend>@T("Analytics Settings")</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.AnalyticsScript, T("Analytics script"))
+                @Html.TextAreaFor(m => m.AnalyticsScript, new {
+                    @class = "text large"
+                })
+                @Html.ValidationMessageFor(m => m.AnalyticsScript)
+                <span class="hint">@T("This script will be injected into the head of the site, wrapped into a script tag (so don't include the script tag). E.g. you can copy your async Google Analytics tracking code here.")</span>
+            </li>
+            <li>
+                @Html.EditorFor(m => m.IncludeOnAdmin)
+                <label for="@Html.FieldIdFor(m => m.IncludeOnAdmin)" class="forcheckbox">@T("Include script on the admin site")</label>
+                @Html.ValidationMessageFor(m => m.IncludeOnAdmin)
+                <span class="hint">@T("If checked, the script will be included not just on the frontend but also on the admin.")</span>
+            </li>
+        </ol>
+    </fieldset>
+    <button class="primaryAction" type="submit">@T("Save")</button>
+}

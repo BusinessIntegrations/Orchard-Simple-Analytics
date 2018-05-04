@@ -83,31 +83,38 @@
     <Content Include="Module.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminMenu.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="Drivers\AnalyticsSettingsPartDriver.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Filters\AnalyticsScriptInjectingFilter.cs" />
     <Compile Include="Handlers\AnalyticsSettingsPartHandler.cs" />
     <Compile Include="Models\AnalyticsSettingsPart.cs" />
-    <Compile Include="Services\CacheHelper.cs" />
-    <Compile Include="Services\ISimpleAnalyticsCacheService.cs" />
-    <Compile Include="Services\SimpleAnalyticsCacheService.cs" />
+    <Compile Include="Models\IAnalyticsSettingsPart.cs" />
+    <Compile Include="Permissions.cs" />
+    <Compile Include="Services\CacheModel.cs" />
+    <Compile Include="Services\ICacheModel.cs" />
+    <Compile Include="Services\ICacheService.cs" />
+    <Compile Include="Services\CacheService.cs" />
+    <Compile Include="ViewModels\AnalyticsSettingsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Licence.md" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Placement.info" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\EditorTemplates\Parts.AnalyticsSettings.SiteSettings.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
       <Project>{2d1d92bb-4555-4cbe-8d0e-63563d6ce4c6}</Project>
       <Name>Orchard.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Orchard.Layouts\Orchard.Layouts.csproj">
+      <Project>{6BD8B2FA-F2E3-4AC8-A4C3-2925A653889A}</Project>
+      <Name>Orchard.Layouts</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

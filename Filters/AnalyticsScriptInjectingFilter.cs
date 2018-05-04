@@ -8,12 +8,12 @@ using Orchard.UI.Resources;
 
 namespace Lombiq.SimpleAnalytics.Filters {
     public class AnalyticsScriptInjectingFilter : FilterProvider, IResultFilter {
+        private readonly ICacheService _cacheService;
         private readonly IResourceManager _resourceManager;
-        private readonly ISimpleAnalyticsCacheService _simpleAnalyticsCacheService;
 
-        public AnalyticsScriptInjectingFilter(IResourceManager resourceManager, ISimpleAnalyticsCacheService simpleAnalyticsCacheService) {
+        public AnalyticsScriptInjectingFilter(IResourceManager resourceManager, ICacheService cacheService) {
             _resourceManager = resourceManager;
-            _simpleAnalyticsCacheService = simpleAnalyticsCacheService;
+            _cacheService = cacheService;
         }
 
         #region IResultFilter Members
@@ -24,11 +24,12 @@ namespace Lombiq.SimpleAnalytics.Filters {
             if (!(filterContext.Result is ViewResult)) {
                 return;
             }
+
             var isAdmin = AdminFilter.IsApplied(filterContext.RequestContext);
-            var cacheHelper = _simpleAnalyticsCacheService.GetScript();
-            if ((!isAdmin || cacheHelper.IncludeInAdmin) &&
-                !string.IsNullOrEmpty(cacheHelper.Script)) {
-                _resourceManager.RegisterHeadScript(cacheHelper.Script);
+            var cacheModel = _cacheService.GetData();
+            if ((!isAdmin || cacheModel.IncludeOnAdmin) &&
+                !string.IsNullOrEmpty(cacheModel.Script)) {
+                _resourceManager.RegisterHeadScript(cacheModel.Script);
             }
         }
         #endregion

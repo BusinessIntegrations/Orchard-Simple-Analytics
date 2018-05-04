@@ -2,7 +2,7 @@ Name: BI Simple Analytics
 AntiForgery: enabled
 Author: Lombiq
 Website: https://github.com/BusinessIntegrations/Orchard-Simple-Analytics
-Version: 2.0.199
+Version: 2.0.252
 OrchardVersion: 1.10.2
 Tags: Analytics
 Description: Adds the ability to simply configure an analytics script from site settings. Modified by Business Integrations Ltd.
