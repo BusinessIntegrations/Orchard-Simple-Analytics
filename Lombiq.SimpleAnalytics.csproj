@@ -100,6 +100,7 @@
   <ItemGroup>
     <None Include="Licence.md" />
     <Content Include="packages.config" />
+    <Content Include="Readme.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Index.cshtml" />
